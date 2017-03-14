@@ -3,7 +3,7 @@ class profile::nginx(
 ) {
   include ::nginx
   notify { "testdata":
-    messag => $hosts;
+    message => $hosts;
   }
   $vhosts.each |$vhost| {
     notice($vhost)
