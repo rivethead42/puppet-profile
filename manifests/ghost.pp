@@ -2,12 +2,12 @@ class profile::ghost(
   $nodejs_version,
   $ghost_version,
   $ghost_source_dir,
-  $ghost_content_dir
+  $ghost_content_dir,
   $ghost_group,
   $ghost_user,
   $packages,
 ) {
-  packages { $packages:
+  package { $packages:
     ensure => present,
   }
 
