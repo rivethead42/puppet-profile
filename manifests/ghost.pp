@@ -3,6 +3,8 @@ class profile::ghost(
   $ghost_version,
   $ghost_source_dir,
   $ghost_content_dir
+  $ghost_group,
+  $ghost_user,
   $packages,
 ) {
   packages { $packages:
@@ -17,6 +19,8 @@ class profile::ghost(
     ghost_version     => $ghost_version,
     ghost_source_dir  => $ghost_source_dir,
     ghost_content_dir => $ghost_content_dir,
+    ghost_group       => $ghost_group,
+    ghost_user        => $ghost_user,
     require           => [Packages[$packages], Class['::nodejs']]
   }
 }
