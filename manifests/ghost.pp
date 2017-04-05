@@ -1,6 +1,6 @@
 class profile::ghost {
   class { '::nodejs':
-    repo_url_suffix => '5.x',
+    repo_url_suffix => '6.x',
   }
 
   class { '::ghost': }
