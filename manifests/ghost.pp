@@ -1,7 +1,5 @@
 class profile::ghost {
-  class { '::nodejs':
-    before => Class['::ghost']
-  }
+  class { '::nodejs': }
 
   #class { '::ghost': }
 
