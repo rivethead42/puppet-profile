@@ -5,7 +5,9 @@ class profile::ghost {
 
   class { '::ghost': }
 
-  ::ghost::blog { 'ghost': }
+  ::ghost::blog { 'ghost':
+    use_supervisor => false,
+  }
 
   Ghost::Blog <| |> {
     require => Class['::nodejs']
