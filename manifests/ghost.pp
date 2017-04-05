@@ -6,4 +6,8 @@ class profile::ghost {
   class { '::ghost': }
 
   ::ghost::blog { 'ghost': }
+
+  Ghost::Blog <| |> {
+    require => Class['::nodejs']
+  }
 }
