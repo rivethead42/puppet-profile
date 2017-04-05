@@ -3,7 +3,7 @@ class profile::ghost {
   include ::ghost
   ::ghost::blog { 'ghost': }
 
-  ::Ghost <| |> {
+  Class['::Ghost'] <| |> {
     require => Class['::nodejs']
   }
 }
