@@ -3,11 +3,11 @@ class profile::ghost {
     repo_url_suffix => '5.x',
   }
 
-  #class { '::ghost': }
+  class { '::ghost': }
 
-  #::ghost::blog { 'ghost': }
+  ::ghost::blog { 'ghost': }
 
-  #Ghost::Blog <| |> {
-  #  require => Class['::nodejs']
-  #}
+  Ghost::Blog <| |> {
+    require => Class['::nodejs']
+  }
 }
