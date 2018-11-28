@@ -1,6 +1,11 @@
-class profile::base {
-  include ssh
+class profile::base(
+  $ntp_servers = [
+    '0.ubuntu.pool.ntp.org',
+    '1.ubuntu.pool.ntp.org',
+  ],
+) {
   class { '::ntp':
-    servers => [ '0.ubuntu.pool.ntp.org', '1.ubuntu.pool.ntp.org' ],
+    servers => $ntp_servers,
   }
 }
+
